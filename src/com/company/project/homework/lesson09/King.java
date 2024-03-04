@@ -3,11 +3,12 @@ package com.company.project.homework.lesson09;
 public class King extends Unit {
     private BattleUnit[] army;
     private int index = 0;
+    public static final int maxUnitCount = 20;
 
 
     public King(int heathPoint, int speed) {
         super(heathPoint, speed, 500);
-        army = new BattleUnit[20];
+        army = new BattleUnit[maxUnitCount];
     }
 
     //Метод набора в армию
@@ -84,8 +85,10 @@ public class King extends Unit {
         for (BattleUnit battleUnit : king2.mobilization())
             if (battleUnit != null)
                 countSoldiersKing2++;
-        if (countSoldiersKing1 == countSoldiersKing2)
+        if (countSoldiersKing1 == countSoldiersKing2){
             System.out.println("Ничья");
+            return;
+        }
         if (countSoldiersKing1 > countSoldiersKing2){
             System.out.println("Победил первый король");
             king1.setMoney(king2.getMoney() / 2);

@@ -1,7 +1,7 @@
 package com.company.project.homework.lesson09;
 
-public class Knight extends BattleUnit {
-    public Knight(int heathPoint, int speed, int money, int attackPower) {
+public class Knight extends BattleUnit implements Attackable{
+    private Knight(int heathPoint, int speed, int money, int attackPower) {
         super(heathPoint, speed, money, attackPower);
     }
 
@@ -18,6 +18,18 @@ public class Knight extends BattleUnit {
             this.setHeathPoint(this.getHeathPoint() - unit.getAttackPower());
             System.out.println("Рыцарь " + this + " получает атаку в ответ от " + unit);
         }
+    }
+
+    public static Attackable initBattleUnit(int value){
+        return new Knight(200, 10 * value, 100 * value, (int)((Math.random() + 1) * value));
+    }
+    public static Attackable[] initBattleUnitArray(int countValue){
+        if (countValue <= 0 || countValue > 20) throw new IllegalArgumentException("Количество человек в армии не может превышать 20 человек");
+        BattleUnit[] battleUnits = new BattleUnit[countValue];
+        for (int i = 0; i < countValue; i++){
+            battleUnits[i] = new Knight(200, 10 * countValue, 100 * countValue, (int)((Math.random() + 1) * countValue));
+        }
+        return battleUnits;
     }
 
 }
