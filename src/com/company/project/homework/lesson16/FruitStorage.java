@@ -98,8 +98,7 @@ public class FruitStorage {
         return minPrice;
     }
 
-    public List<FruitToStorageInfo> getSortedArray(Comparator<FruitToStorageInfo> comparator){
-        Collections.sort(arrayFruitToStorage, comparator);
+    public List<FruitToStorageInfo> getSortedArray(){
         return arrayFruitToStorage;
     }
 }

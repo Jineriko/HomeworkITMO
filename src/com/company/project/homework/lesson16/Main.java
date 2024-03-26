@@ -1,5 +1,8 @@
 package com.company.project.homework.lesson16;
 
+import java.util.Comparator;
+import java.util.function.Function;
+
 public class Main {
     public static void main(String[] args) {
         FruitStorage fruitStorage = new FruitStorage(100);
@@ -28,13 +31,21 @@ public class Main {
         fruitStorage.increasePrice(20);
         fruitStorage.printArrayFruitToStorage();
         //вывод на экран с учетом сортировки
-        fruitStorage.getSortedArray(new FruitToStorageInfo.CountComparator()); //сортировка по количеству
+        fruitStorage.getSortedArray().sort((FruitToStorageInfo fruit1, FruitToStorageInfo fruit2) -> //сортировка по количеству
+                Integer.compare(fruit2.getCount(), fruit1.getCount()));
         fruitStorage.printArrayFruitToStorage();
-        fruitStorage.getSortedArray(new FruitToStorageInfo.PriceComparator()); //сортировка по цене
+        fruitStorage.getSortedArray().sort((fruit1, fruit2) -> //сортировка по цене
+                Integer.compare((int) fruit1.getPrice(), (int) fruit2.getPrice()));
         fruitStorage.printArrayFruitToStorage();
-        fruitStorage.getSortedArray(new FruitToStorageInfo.CountAndPriceComparator()); //сортировка по количеству и цене
+        fruitStorage.getSortedArray().sort((fruit1, fruit2) -> { //сортировка по количеству и цене
+            if (fruit1.getCount() == fruit2.getCount())
+                return Integer.compare((int) fruit2.getPrice(), (int) fruit1.getPrice());
+            else
+                return Integer.compare(fruit1.getCount(), fruit2.getCount());
+        });
         fruitStorage.printArrayFruitToStorage();
-        fruitStorage.getSortedArray(new FruitToStorageInfo.FruitTypeComparator()); //сортировка по типу (в зависимости по добавлению в enum)
+        fruitStorage.getSortedArray().sort((fruit1, fruit2) -> //сортировка по типу (в зависимости по добавлению в enum)
+                Integer.compare(fruit1.getType().ordinal(), fruit2.getType().ordinal()));
         fruitStorage.printArrayFruitToStorage();
     }
 }
