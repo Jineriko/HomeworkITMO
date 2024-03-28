@@ -5,8 +5,8 @@ public class Task14 {
     public static <T extends Vehicle, K extends T> K[] task01(T first, K second, Car car) {
         // какие методы можно вызвать у second?
         // какие из аргументов можно добавить в массив, а какие нет и почему
-        K[] arr = {};
-        return arr;
+//        K[] arr = {};
+        return null;
         // 1. У second можно вызвать методы Vehicle и его супертипов (Object)
         // 2. В массив можно добавить аргументы всех наследников класса Vehicle,
         //  т.к тип K ограничивается классом Vehicle, поэтому в массив мы можем добавить его

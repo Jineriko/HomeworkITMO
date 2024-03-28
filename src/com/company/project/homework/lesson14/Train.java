@@ -35,4 +35,12 @@ public class Train extends Vehicle{
         this.incLevelOfWare(2);
         if (carCount > 0) carCount -= 1;
     }
+
+    @Override
+    public String toString() {
+        return "Train{" +
+                "carCount=" + carCount +
+                ", isClimateControl=" + isClimateControl +
+                '}';
+    }
 }

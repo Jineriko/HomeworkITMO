@@ -34,7 +34,7 @@ public class FruitStorage {
 
         if (toStorageInfo == null) return false;
         for (var arrayStorage : arrayFruitToStorage) {
-            if (arrayStorage.equals(toStorageInfo))
+            if (arrayStorage == toStorageInfo)
                 return false;
         }
         if (arrayFruitToStorage.contains(toStorageInfo)) {

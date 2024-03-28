@@ -25,4 +25,11 @@ public class Car extends Vehicle implements Repaintable{
     public void breakDown() {
         incLevelOfWare(levelOfWare * 2);
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color=" + color +
+                '}';
+    }
 }

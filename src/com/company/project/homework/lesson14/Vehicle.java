@@ -16,6 +16,10 @@ public abstract class Vehicle implements Repairable{
         return levelOfWare;
     }
 
+    public void setLevelOfWare(int levelOfWare) {
+        this.levelOfWare = levelOfWare;
+    }
+
     public void setNumber(String number) {
         this.number = number;
     }
