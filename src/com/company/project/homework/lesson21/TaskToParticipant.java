@@ -18,4 +18,15 @@ public class TaskToParticipant {
         return progress;
     }
 
+    public void setParticipant(Participant participant) {
+        this.participant = participant;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
 }

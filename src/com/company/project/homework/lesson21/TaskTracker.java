@@ -1,9 +1,7 @@
 package com.company.project.homework.lesson21;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TaskTracker {
     private String name;
@@ -20,7 +18,7 @@ public class TaskTracker {
     // условие добавление исполнителя по умолчанию: исполнитель должен быть
     // доступен по свойству active
     // может быть заменено методом participantSettings
-    private ParticipantPredicate participantPredicates; // или так
+    private ArrayList<ParticipantPredicate> participantPredicates; // или так
 
 
     // конструктор не должен быть доступен вне класса
@@ -66,7 +64,13 @@ public class TaskTracker {
         // создается TaskToParticipant, если задача (task) и исполнитель (participant)
         // удовлетворяют требованиям taskPredicates и participantPredicates
         // TaskToParticipant добавляется в tasks
-        return this;
+        TaskTracker taskTracker = new TaskTracker();
+        TaskToParticipant taskToParticipant = new TaskToParticipant();
+        taskToParticipant.setTask(task);
+        taskToParticipant.setParticipant(participant);
+        taskToParticipant.setProgress((int) Math.random() * 100);
+        taskTracker.tasks.add(taskToParticipant);
+        return taskTracker;
     }
 
     // возвращает статистику по текущему состоянию трекера
@@ -80,7 +84,9 @@ public class TaskTracker {
     // где ключи - идентификаторы исполнителей
     // значения - все его открытые задачи
     public Map<Integer, List<Task>> groupTasksByParticipantId() {
-        return null;
+         return tasks.stream().collect(Collectors.groupingBy(tasks -> tasks.getParticipant().getId(),
+                Collectors.filtering(tasks -> tasks.getTask().getStatus() != Task.Status.CLOSED,
+                        Collectors.mapping(tasks -> tasks.getTask(), Collectors.toList()))));
     }
 
     // возвращает Map,

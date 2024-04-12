@@ -12,15 +12,15 @@ public class Task {
 
     // геттеры, сеттеры и д.т
 
-
-    public Task(int id, String title, Status status, LocalDateTime closeTo) {
-        if (id < 1 || title == null || status == null || closeTo == null) throw new IllegalArgumentException();
-        this.id = id;
-        this.title = title;
-        this.status = status;
-        this.createdAt = LocalDateTime.now();
-        this.closeTo = closeTo;
-    }
+//
+//    public Task(int id, String title, Status status, LocalDateTime closeTo) {
+//        if (id < 1 || title == null || status == null || closeTo == null) throw new IllegalArgumentException();
+//        this.id = id;
+//        this.title = title;
+//        this.status = status;
+//        this.createdAt = LocalDateTime.now();
+//        this.closeTo = closeTo;
+//    }
 
     public int getId() {
         return id;

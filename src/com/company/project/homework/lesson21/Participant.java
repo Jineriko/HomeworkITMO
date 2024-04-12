@@ -12,15 +12,15 @@ public class Participant {
 
     // геттеры, сеттеры и д.т
 
-
-    public Participant(int id, String name, boolean active, int experience, int maxTasks) {
-        if (id < 1 || name == null || experience < 0 || maxTasks < 1) throw new IllegalArgumentException();
-        this.id = id;
-        this.name = name;
-        this.active = active;
-        this.experience = experience;
-        this.maxTasks = maxTasks;
-    }
+//
+//    public Participant(int id, String name, boolean active, int experience, int maxTasks) {
+//        if (id < 1 || name == null || experience < 0 || maxTasks < 1) throw new IllegalArgumentException();
+//        this.id = id;
+//        this.name = name;
+//        this.active = active;
+//        this.experience = experience;
+//        this.maxTasks = maxTasks;
+//    }
 
     public int getId() {
         return id;
