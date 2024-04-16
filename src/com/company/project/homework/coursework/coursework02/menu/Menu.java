@@ -1,5 +1,6 @@
-package com.company.project.homework.coursework.coursework02.menuFunction;
+package com.company.project.homework.coursework.coursework02.menu;
 
+//Reciver
 public class Menu {
     public void start(){}
     public void exit(){}

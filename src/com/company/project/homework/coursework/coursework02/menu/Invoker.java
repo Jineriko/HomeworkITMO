@@ -1,13 +1,13 @@
-package com.company.project.homework.coursework.coursework02.menuFunction;
+package com.company.project.homework.coursework.coursework02.menu;
 
-public class GamePlay {
-    private CommandMenu startGame;
-    private CommandMenu resumeGame;
-    private CommandMenu saveGame;
-    private CommandMenu loadGame;
-    private CommandMenu exitGame;
+public class Invoker {
+    private Command startGame;
+    private Command resumeGame;
+    private Command saveGame;
+    private Command loadGame;
+    private Command exitGame;
 
-    public GamePlay(CommandMenu startGame, CommandMenu resumeGame, CommandMenu saveGame, CommandMenu loadGame, CommandMenu exitGame) {
+    public Invoker(Command startGame, Command resumeGame, Command saveGame, Command loadGame, Command exitGame) {
         this.startGame = startGame;
         this.resumeGame = resumeGame;
         this.saveGame = saveGame;

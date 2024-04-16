@@ -1,13 +1,12 @@
 package com.company.project.homework.coursework.coursework02;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import com.company.project.homework.coursework.coursework02.gamePlay.Gameplay;
+import com.company.project.homework.coursework.coursework02.gamePlay.User;
 
 public class GameApp {
     public static void main(String[] args) {
         System.out.println("Начало игры");
+        System.out.println();
         /*
         0 Лисенок
         1 Вернуться домой
@@ -23,18 +22,12 @@ public class GameApp {
         11 Поесть немного и передохнуть
         12 Скорее отнести мёд Медвежонку
         */
-        Paragraph.getParagraphList().get(0).paragraphNameOutput();
-        Paragraph.getParagraphList().get(0).paragraphTextOutput();
-        Paragraph.getParagraphList().get(1).paragraphNameOutput();
-        Paragraph.getParagraphList().get(2).paragraphNameOutput();
+        User user01 = new User("Alex");
+        Gameplay gameplay = new Gameplay(user01);
+        gameplay.startStory();
 
-        Scanner scanner = new Scanner(System.in);
-        int answerUser01 = scanner.nextInt();
-        Action action = new Action();
-        action.choiceAction(answerUser01);
-
-
-
-
+        while (user01.getStoryLine().getStoryCount() != 0){
+            gameplay.actionUser();
+        }
     }
 }

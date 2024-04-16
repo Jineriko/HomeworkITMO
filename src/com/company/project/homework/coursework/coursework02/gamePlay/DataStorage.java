@@ -1,19 +1,18 @@
-package com.company.project.homework.coursework.coursework02;
+package com.company.project.homework.coursework.coursework02.gamePlay;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class DataStorage {
     private static DataStorage data;
     private DataStorage(){}
 
-    private static List<String> paragraphName = List.of("Лисенок", "Вернуться домой", "Отправиться на поиски",
+    private List<String> paragraphName = List.of("Лисенок", "Вернуться домой", "Отправиться на поиски",
             "Попытаться разузнать о Бельчонке у лесных жителей", "Искать Бельчонка в одиночку",
             "Расспросить Сову", "Расспросить Волка", "Поверить Сове и отправиться вглубь леса",
             "Нужно воспользоваться шансом и раздобыть мёд", "Подождать, вдруг пчёлы улетят",
             "Нужно попытаться выкрасть мёд немедленно", "Поесть немного и передохнуть",
             "Скорее отнести мёд Медвежонку");
-    private static List<String> paragraphText = List.of("Каждое утро Лисёнок просыпался, завтракал и шёл увидеться с Бельчонком. " +
+    private List<String> paragraphText = List.of("Каждое утро Лисёнок просыпался, завтракал и шёл увидеться с Бельчонком. " +
                     "Это утро не было исключением. Лисёнок пришёл на их обычное место встречи, но Бельчонка там не было. Лисёнок ждал, ждал, но так и не смог дождаться своего друга. \n\"" +
                     "Бельчонок не пропустил еще ни одной встречи, вдруг он попал в беду.\" - подумал Лисёнок. Как поступить Лисенку?",
             "Вернувшись домой, Лисёнок нашёл там Бельчонка. Оказалось, что Бельчонок пришёл на место встречи раньше и увидел там рой злобных пчел. " +
@@ -39,11 +38,11 @@ public class DataStorage {
         return data;
     }
 
-    public static List<String> getParagraphName() {
+    public List<String> getParagraphName() {
         return paragraphName;
     }
 
-    public static List<String> getParagraphText() {
+    public List<String> getParagraphText() {
         return paragraphText;
     }
 }

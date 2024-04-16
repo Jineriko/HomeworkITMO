@@ -1,6 +1,6 @@
-package com.company.project.homework.coursework.coursework02.menuFunction;
+package com.company.project.homework.coursework.coursework02.menu;
 
-public class ExitGame implements CommandMenu{
+public class ExitGame implements Command {
     private Menu exitMenu;
 
     public ExitGame(Menu exitMenu) {
