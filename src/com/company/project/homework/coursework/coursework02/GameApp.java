@@ -1,7 +1,6 @@
 package com.company.project.homework.coursework.coursework02;
 
 import com.company.project.homework.coursework.coursework02.gamePlay.Gameplay;
-import com.company.project.homework.coursework.coursework02.gamePlay.User;
 
 public class GameApp {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class GameApp {
         */
         User user01 = new User("Alex");
         Gameplay gameplay = new Gameplay(user01);
-        gameplay.startStory();
+
 
         while (user01.getStoryLine().getStoryCount() != 0){
             gameplay.actionUser();

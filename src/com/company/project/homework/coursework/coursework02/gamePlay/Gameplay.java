@@ -1,5 +1,7 @@
 package com.company.project.homework.coursework.coursework02.gamePlay;
 
+import com.company.project.homework.coursework.coursework02.User;
+
 public class Gameplay {
     private User user;
     public Gameplay(User user) {

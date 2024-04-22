@@ -1,4 +1,6 @@
-package com.company.project.homework.coursework.coursework02.gamePlay;
+package com.company.project.homework.coursework.coursework02;
+
+import com.company.project.homework.coursework.coursework02.gamePlay.StoryLine;
 
 import java.util.Scanner;
 
@@ -16,6 +18,10 @@ public class User {
     }
     public StoryLine getStoryLine() {
         return storyLine;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
