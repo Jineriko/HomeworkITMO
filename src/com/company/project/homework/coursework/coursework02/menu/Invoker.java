@@ -6,28 +6,44 @@ public class Invoker {
     private Command saveGame;
     private Command loadGame;
     private Command exitGame;
+    private Command printMenu;
+    private Command exitToMenu;
 
-    public Invoker(Command startGame, Command resumeGame, Command saveGame, Command loadGame, Command exitGame) {
+    public Invoker(Command startGame, Command resumeGame, Command saveGame, Command loadGame, Command exitGame, Command printMenu, Command exitToMenu) {
         this.startGame = startGame;
         this.resumeGame = resumeGame;
         this.saveGame = saveGame;
         this.loadGame = loadGame;
         this.exitGame = exitGame;
+        this.printMenu = printMenu;
+        this.exitToMenu = exitToMenu;
     }
 
-    public void startGame(){
+    public void startGame() {
         startGame.execute();
     }
-    public void resumeGame(){
+
+    public void resumeGame() {
         resumeGame.execute();
     }
-    public void saveGame(){
+
+    public void saveGame() {
         saveGame.execute();
     }
-    public void loadGame(){
+
+    public void loadGame() {
         loadGame.execute();
     }
-    public void exitGame(){
+
+    public void exitGame() {
         exitGame.execute();
+    }
+
+    public void printMenu() {
+        printMenu.execute();
+    }
+
+    public void exitToMenu() {
+        exitToMenu.execute();
     }
 }

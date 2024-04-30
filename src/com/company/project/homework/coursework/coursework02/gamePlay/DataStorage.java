@@ -2,7 +2,7 @@ package com.company.project.homework.coursework.coursework02.gamePlay;
 
 import java.util.List;
 
-public class DataStorage {
+public class DataStorage { // класс для хранения параграфов и текста
     private static DataStorage data;
     private DataStorage(){}
 
