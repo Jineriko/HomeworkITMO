@@ -10,9 +10,10 @@ public class Owner {
     public Owner(String name, String lastName, LocalDate localDate) {
         if (name == null) throw new IllegalArgumentException("Поле имя не может быть пустым");
         if (lastName == null) throw new IllegalArgumentException("Поле фамилия не может быть пустым");
-        if (localDate == null || localDate.isAfter(LocalDate.now())
-                || localDate.getYear() < 18 || localDate.getYear() > 110)
-            throw new IllegalArgumentException("Некорректно указан год рождения");
+        if (localDate == null || localDate.isAfter(LocalDate.now()) ||
+                (LocalDate.now().getYear() - localDate.getYear() < 18) ||
+                (LocalDate.now().getYear() - localDate.getYear() > 110))
+                    throw new IllegalArgumentException("Некорректно указан год рождения");
         this.name = name;
         this.lastName = lastName;
         this.localDate = localDate;
@@ -20,6 +21,6 @@ public class Owner {
 
     @Override
     public String toString() {
-        return name + " " + lastName;
+        return name + " " + lastName + " ";
     }
 }
